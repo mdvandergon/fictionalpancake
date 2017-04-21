@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12">
+            <h3>Last Five Comments</h3>
+            <ul class="media-list">
+                {% for comment in latest_comment_list %}
+                <li class="media">
+                    <div class="media-left">
+                        <a href="/data/{{ comment.id }}/">{{ comment.id }}</a>
+                    </div>
+                    <div class="media-body">
+                        <h4 class="media-heading">{{ comment.forum.name }}</h4>
+                        <p>{{ comment.clean_comment }}</p>
+                    </div>
+                </li>
+                {% endfor %}
+                </ul>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6">
+                {{ time_chart.as_html }}
+            </div>
+            <div class="col-sm-6">
+                <!-- other chart -->
+            </div>
+        </div>
+    </div>
+    {% endblock %}

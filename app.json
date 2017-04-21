@@ -1,0 +1,8 @@
+{
+  "name": "Fictional Pancake",
+  "description": "A comment analysis app",
+  "image": "heroku/python",
+  "repository": "https://github.com/mdvandergon/fictional-pancake",
+  "keywords": ["python", "django" ],
+  "addons": [ "heroku-postgresql" ]
+}

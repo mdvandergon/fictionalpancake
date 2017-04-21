@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Fictional Pancake</title>
+  <link rel="stylesheet" type="text/css" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Baloo|Lato" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+  <script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+  {% load staticfiles %}
+  <style type="text/css">
+    h1,h2,h3,h4,h5,h6 {
+      font-family: 'Baloo', 'Lato', sans-serif;
+    }
+    p,em,b,i {
+      font-family: 'Lato', sans-serif;
+    }
+    .jumbotron {
+        background: #2980b9;
+        color: white;
+        padding-bottom: 80px
+    }
+    .jumbotron .btn-primary {
+        background: #845ac7;
+        border-color: #845ac7
+    }
+    .jumbotron .btn-primary:hover {
+        background: #7646c1
+    }
+    .jumbotron p {
+        color: #d9ccee;
+        max-width: 75%;
+        margin: 1em auto 2em
+    }
+
+    .jumbotron h1 {
+      margin-top: 8px;
+    }
+    .navbar+.jumbotron {
+        margin-top: -20px
+    }
+    .jumbotron .logo {
+        display: inline-block;
+        background: #3498db;
+        border-radius: 50%;
+        overflow: hidden;
+        width: 100px;
+        height: 100px;
+        margin: auto;
+        box-shadow: 0px 0px 1px #3498db;
+    }
+    .jumbotron .logo {
+        max-width: 100%
+    }
+    .loader-container {
+        width: 100%;
+        height: 180px;
+        line-height: 360px;
+        text-align: center;
+        float: left;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    img.thumbnail {
+        padding: 0px;
+    }
+
+  </style>
+</head>
+<body>
+<nav class="navbar navbar-default navbar-static-top navbar-inverse">
+  <div class="container">
+    <ul class="nav navbar-nav">
+      <li class="{% if nbar == 'home' %}active{% endif %}">
+        <a href="/">Predict</a>
+      </li>
+      <li class="{% if nbar == 'stats' %}active{% endif %}">
+        <a href="/stats"><span class="glyphicon glyphicon-dashboard"></span> Stats</a>
+      </li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="navbar-right">
+      </li>
+    </ul>
+  </div>
+</nav>
+
+{% block content %}{% endblock %}
+
+<script src="{% static 'cookie.js' %}"></script>
+<script src="{% static 'predict.js' %}"></script>
+</body>
+</html>

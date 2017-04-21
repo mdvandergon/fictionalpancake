@@ -1,0 +1,14 @@
+venv
+*.pyc
+staticfiles
+.env
+db.sqlite3
+.DS_Store
+data/scripts/keys
+data/.DS_Store
+dump.rdb
+.idea
+*.csv
+*.ipynb_checkpoints
+*.ipynb
+*.sh

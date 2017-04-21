@@ -1,0 +1,13 @@
+{% extends "index.html" %}
+{% block content %}
+<div class="container">
+    <blockquote class="p lead">{{ object.clean_comment }}</blockquote>
+    <p>Forum: {{ object.forum.name }}</p>
+    <p>Commenter: {{ object.author.name }}</p>
+    <p>Published: {{ object.date_posted|date }}</p>
+    <p>Likes: {{ object.likes }}</p>
+    <p>Words in Bold: {{ object.num_bold }}</p>
+    <p>Words Uppercased: {{ object.num_uppercase}}</p>
+    <i>Saved in database on: {{ object.date_created|date }}</i>
+</div>
+{% endblock %}

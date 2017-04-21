@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+{% load svg %}
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>
+<script type="text/javascript">
+    google.load("visualization", "1", {packages:["corechart"]});
+</script>
+
+{% block content %}
+
+<div class="jumbotron text-center">
+  <div class="container">
+    <a href="/" class="logo">{% svg 'logo' %}</a><h1>WriteLike</h1>
+  </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Enter some text to predict</h3>
+                </div>
+              <div class="panel-body">
+                <form method="post" action="{% url 'predict' %}" id="predict_form">
+                    {% csrf_token %}
+                    <fieldset>
+                        <div class="form-group">
+                            {{ form.text }}
+                        </div>
+                        <button type="submit" class="btn btn-danger btn-block" value="Predict">Submit</button>
+                    </fieldset>
+                </form>
+              </div>
+            </div>
+
+        </div>
+        <div class="col-md-6">
+            <div id="results" class="panel panel-success hidden">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Results</h3>
+                </div>
+              <div class="panel-body">
+                <h2 id="predict_results"></h2>
+              </div>
+            </div>
+            <div class="loader-container">
+                <img id="preloader" class="thumbnail" src='{% static 'angrycoder.jpg' %}'/>
+                <div id="loader" class="hidden">{% svg 'loader' %}</div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div id="predict_errors" class="alert alert-danger hidden" role="alert">
+    </div>
+</div>
+{% endblock %}
+
+
+
