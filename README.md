@@ -1,6 +1,6 @@
 # Fictional Pancake App
 The project is available online:
-www.fictionalpancake.herokuapp.com
+fictionalpancake.herokuapp.com
 
 With the recent focus on various news outlets and filter bubbles, we wanted to see if an algorithm can classify comments on news sites.
 
